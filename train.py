@@ -151,7 +151,7 @@ def train_nsp_lm():
     # model = torch.nn.DataParallel(model)
 
     print(all_file)
-    file_divide = 3
+    file_divide = 32
     for epc in range(epc_start+1, file_divide):
         print(all_file[epc::file_divide])
         dataset = Data.TensorDataset(*agg_data(all_file[epc::file_divide], 5))
@@ -355,5 +355,5 @@ def train_shuffle_ent_raw():
 
 if __name__ == '__main__':
     # train_shuffle_ent_raw()
-    # train_nsp_lm()
-    test_model()
+    train_nsp_lm()
+    # test_model()
